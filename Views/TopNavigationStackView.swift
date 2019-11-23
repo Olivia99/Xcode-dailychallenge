@@ -17,7 +17,7 @@ class TopNavigationStackView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-      
+        heightAnchor.constraint(equalToConstant: 80).isActive = true;
         fireImage.contentMode = .scaleAspectFit
         chatButton.setImage(#imageLiteral(resourceName: "top_right_messages").withRenderingMode(.alwaysOriginal), for: .normal)
         profileButton.setImage(#imageLiteral(resourceName: "top_left_profile").withRenderingMode(.alwaysOriginal), for: .normal)
@@ -27,6 +27,8 @@ class TopNavigationStackView: UIStackView {
         }
         
         distribution = .equalCentering
+        isLayoutMarginsRelativeArrangement = true 
+        layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
         
         
 //        let buttons =  [#imageLiteral(resourceName: "top_left_profile"), #imageLiteral(resourceName: "app_icon"), #imageLiteral(resourceName: "top_right_messages") ].map { (img) -> UIView in
