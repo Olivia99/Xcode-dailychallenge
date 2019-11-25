@@ -12,9 +12,12 @@ class HomeControll: UIViewController {
     let topStackView = TopNavigationStackView()
     let buttonStackView = HomeBottomControlStackView()
     let cardDeckView = UIView()
-     let users = [
-    User(name: "Kelly", age: 23, profession: "DJ", imageName: "kelly2"),
-    User(name: "Jason Momoa", age: 40, profession: "Actor", imageName: "jason1"),
+ 
+    
+    let cardviewmodels = [
+        User(name: "Kelly", age: 23, profession: "DJ", imageName: "kelly2").toCardViewModel(),
+        User(name: "Jason Momoa", age: 40, profession: "Actor", imageName: "jason1").toCardViewModel()
+        
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,23 +44,28 @@ class HomeControll: UIViewController {
        }
     
     fileprivate func setupCards(){
-        
-        users.forEach{
-            (user) in
+        cardviewmodels.forEach { (cardVM) in
             let cardView = CardView(frame: .zero)
-            cardView.imageView.image = UIImage(named: user.imageName)
-                   cardDeckView.addSubview(cardView)
-            cardView.informationLable.text = "\(user.name) \(user.age)\n\(user.profession)"
-            let attributedText = NSMutableAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 34, weight: .heavy)])
-            attributedText.append(NSAttributedString(string: "  \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
-            attributedText.append(NSAttributedString(string: "  \n\(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
+            cardView.imageView.image = UIImage(named:cardVM.imageName)
+            cardView.informationLable.attributedText = cardVM.attributedString
+            cardView.informationLable.textAlignment = cardVM.textAlignmnet
             
-            
-            cardView.informationLable.attributedText = attributedText
-            
-                   cardView.fillSuperview()
-           
+            cardDeckView.addSubview(cardView)
+            cardView.fillSuperview()
         }
+//        users.forEach{
+//            (user) in
+//            let cardView = CardView(frame: .zero)
+//            cardView.imageView.image = UIImage(named: user.imageName)
+//                   cardDeckView.addSubview(cardView)
+//            cardView.informationLable.text = "\(user.name) \(user.age)\n\(user.profession)"
+//
+//
+//            cardView.informationLable.attributedText = attributedText
+//
+//                   cardView.fillSuperview()
+//
+//        }
        
         
     }
