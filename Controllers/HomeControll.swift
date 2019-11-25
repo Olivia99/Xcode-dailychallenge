@@ -56,7 +56,6 @@ class HomeControll: UIViewController {
             cardView.informationLable.attributedText = attributedText
             
                    cardView.fillSuperview()
-     
            
         }
        

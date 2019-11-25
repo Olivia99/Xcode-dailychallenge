@@ -50,6 +50,7 @@
 		0FBB173C2388B7000045F22E = {
 			isa = PBXGroup;
 			children = (
+				0FBB1769238BE6530045F22E /* Controllers */,
 				0FBB1766238BD76C0045F22E /* Model */,
 				0FBB175F2388DA0C0045F22E /* Views */,
 				0FBB175C2388D6A10045F22E /* Extensions */,
@@ -71,7 +72,6 @@
 			children = (
 				0FBB17482388B7000045F22E /* AppDelegate.swift */,
 				0FBB174A2388B7000045F22E /* SceneDelegate.swift */,
-				0FBB174C2388B7000045F22E /* HomeControll.swift */,
 				0FBB174E2388B7000045F22E /* Main.storyboard */,
 				0FBB17512388B7020045F22E /* Assets.xcassets */,
 				0FBB17532388B7020045F22E /* LaunchScreen.storyboard */,
@@ -104,6 +104,14 @@
 				0FBB1767238BD7840045F22E /* users.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0FBB1769238BE6530045F22E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FBB174C2388B7000045F22E /* HomeControll.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
