@@ -25,6 +25,10 @@ class CardView: UIView {
     }
     @objc fileprivate func handlepan(gesture: UIPanGestureRecognizer){
         switch gesture.state {
+        case .began:
+            superview?.subviews.forEach({ (subviews) in
+                subviews.layer.removeAllAnimations() //removed all the animation to prevent the next card presented in a weird position
+            })
         case .changed:
             handleChanged(gesture)
         case .ended:
