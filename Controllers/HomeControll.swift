@@ -16,7 +16,8 @@ class HomeControll: UIViewController {
     
     let cardviewmodels = [
         User(name: "Kelly", age: 23, profession: "DJ", imageName: "kelly2").toCardViewModel(),
-        User(name: "Jason Momoa", age: 40, profession: "Actor", imageName: "jason1").toCardViewModel()
+        User(name: "Jason Momoa", age: 40, profession: "Actor", imageName: "jason1").toCardViewModel(),
+        Advertiser(title: "Jieying's Website", brandName: "jieying.webflow.io", PosterName: "dailyChallenge").toCardViewModel()
         
     ]
     override func viewDidLoad() {
